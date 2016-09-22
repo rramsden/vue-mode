@@ -73,5 +73,7 @@
 
 (add-hook 'vue-mode-hook 'mmm-mode-on)
 
+(setq mmm-parse-when-idle 't)
+
 (provide 'vue-mode)
 ;;; vue-mode.el ends here
