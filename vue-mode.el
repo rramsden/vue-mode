@@ -71,9 +71,13 @@
   (mmm-parse-buffer)
   )
 
-(add-hook 'vue-mode-hook 'mmm-mode-on)
-
 (setq mmm-parse-when-idle 't)
+
+(require 'sgml-mode)
+(add-to-list 'hs-special-modes-alist
+             '(vue-mode "\<\\(template\\|script\\|style\\)\.*>$" "\<\/\\(template\\|script\\|style\\)\>$" "/[*/]" sgml-skip-tag-forward nil))
+
+(add-hook 'vue-mode-hook 'mmm-mode-on)
 
 (provide 'vue-mode)
 ;;; vue-mode.el ends here
